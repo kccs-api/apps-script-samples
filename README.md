@@ -1,5 +1,4 @@
 # google-apps-samples
-
 KCCS APIをGoogle Apps Script利用する場合のサンプルコード集です。
 
 ## Setup

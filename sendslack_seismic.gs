@@ -105,13 +105,11 @@ function makeMessage(sub, ret)
       iconEmoji = ':warning:'
       res = sendSlackMessage(title , iconEmoji, text)
       Logger.log("Message: " + sub + text)
-      // res = sendSlackMessage(title , iconEmoji, message)
-      // Logger.log("Message: " + sub + message)
 
       // slack通知がokの場合はackIdをセット
-      //if (res == "ok") {
-      //  ackIds.push(ackId);
-      //}
+      if (res == "ok") {
+        ackIds.push(ackId);
+      }
     }
     // Pub/Subへack返却
     if (ackIds.length > 0) {
