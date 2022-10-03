@@ -1,8 +1,8 @@
 const project = '<Google Cloud Project ID>';
 const sub = '<Google Cloud subscription ID>'
 const maxMessages = 3
-const slackID = 'https://hooks.slack.com/services/<slack id>'
-const key_file = '<jsonファイル名>'  // キーファイル(jsonファイル)をアップロード
+const slackID = 'https://hooks.slack.com/services/<slack id>'  // [変更点]<slack id>を適切なものに変更してください。
+const key_file = '<jsonファイル名>'  // [変更点]<jsonファイル名>を適切なものに変更してください。あわせてキーJsonファイルをDriveにアップしてください。
 
 function main() {
   // 認証確認
@@ -22,6 +22,7 @@ function main() {
 function pull(sub) {
   var service = getService();
   
+  // [変更点] [PROJECT]、[SUB]を適切なものに変更してください。
   var url = 'https://pubsub.googleapis.com/v1/projects/[PROJECT]/subscriptions/[SUB]:pull'
   .replace("[SUB]", sub)
   .replace("[PROJECT]", project);
@@ -189,6 +190,7 @@ function TokenImported(file_name) {
 function acknowledge(sub, ackIds) {
   var service = getService();
   
+  // [変更点] [PROJECT]、[SUB]を適切なものに変更してください。
   var url = 'https://pubsub.googleapis.com/v1/projects/[PROJECT]/subscriptions/[SUB]:acknowledge'
   .replace("[SUB]", sub)
   .replace("[PROJECT]", project);
